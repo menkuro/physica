@@ -765,8 +765,8 @@
      - “スクロールが必要なところ”に分かりやすいスクロールバーを出す
   ========================= */
   :root{
-    --appH: 100vh;
-    --hdrH: 220px;
+    --appH: 100vh;      /* JSで上書き */
+    --hdrH: 0px;        /* JSで上書き */
     --mainH: calc(var(--appH) - var(--hdrH) - 26px);
   }
   main{ padding-bottom: 18px; }
@@ -5427,17 +5427,23 @@ const BG = {
   
   // Keep layout vars in sync with actual viewport/header height (for internal scroll areas)
   function updateLayoutVars(){
-    // Use innerHeight to avoid mobile address-bar issues
-    document.documentElement.style.setProperty('--appH', window.innerHeight + 'px');
+    // iOS Safari等のアドレスバー伸縮に強い viewport 高を優先して使う
+    const vv = window.visualViewport;
+    const h = vv ? vv.height : window.innerHeight;
+    document.documentElement.style.setProperty('--appH', h + 'px');
+
     const hdr = document.querySelector('header');
-    const hh = hdr ? Math.ceil(hdr.getBoundingClientRect().height) : 220;
+    const hh = hdr ? Math.ceil(hdr.getBoundingClientRect().height) : 0;
     document.documentElement.style.setProperty('--hdrH', hh + 'px');
   }
   window.addEventListener('resize', updateLayoutVars, {passive:true});
+  window.addEventListener('orientationchange', updateLayoutVars, {passive:true});
+  if (window.visualViewport){
+    window.visualViewport.addEventListener('resize', updateLayoutVars, {passive:true});
+  }
   // Call once now (and again after first render)
   updateLayoutVars();
-
-
+  setTimeout(updateLayoutVars, 50);
 /* =========================
      Init
   ========================= */
