@@ -1923,6 +1923,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   const TABS = [
     { id: "lab", name: "\u30E9\u30DC" },
     { id: "research", name: "\u7814\u7A76" },
+    { id: "insight", name: "\u6D1E\u5BDF\u30B7\u30E7\u30C3\u30D7" },
     { id: "story", name: "\u30B9\u30C8\u30FC\u30EA\u30FC" },
     { id: "ach", name: "\u5B9F\u7E3E" },
     { id: "daily", name: "\u30C7\u30A4\u30EA\u30FC" },
@@ -2219,22 +2220,22 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     { id: "g11", name: "\u91CF\u5B50\u91CD\u529B\u3068\u7D71\u4E00", desc: "\u7406\u8AD6\u306E\u7D42\u7AEF\u3001\u5B9F\u9A13\u306E\u518D\u59CB\u52D5\u3002", ids: ["r_qinfo", "r_qcomp", "r_topo", "r_supercond", "r_lattice", "r_ads", "r_string", "r_loop", "r_bhinfo", "r_exascale", "r_unification", "r_qg_consensus"] }
   ];
   const META = [
-    { id: "m_1", name: "\u6D1E\u5BDF\uFF1A\u88C5\u7F6E\u306E\u521D\u671F\u5316", desc: "\u8EE2\u751F\u5F8C\u3001\u30BB\u30F3\u30B5\u30FC\u5217+5\u958B\u59CB\u3002", cost: 3, max: 1, effect: () => {
+    { id: "m_1", name: "\u6D1E\u5BDF\uFF1A\u88C5\u7F6E\u306E\u521D\u671F\u5316", desc: "\u8EE2\u751F\u5F8C\u3001\u30BB\u30F3\u30B5\u30FC\u5217+5\u958B\u59CB\u3002", cost: 3, max: 100, effect: () => {
       S.meta.startSensors = true;
     } },
-    { id: "m_2", name: "\u6D1E\u5BDF\uFF1A\u5408\u7406\u7684\u8CC7\u91D1\u914D\u5206", desc: "\u5168\u751F\u7523+10%/\u6BB5\uFF08\u6700\u592712\u6BB5\uFF09\u3002", cost: 2, max: 12, effectLevel: (lvl) => {
+    { id: "m_2", name: "\u6D1E\u5BDF\uFF1A\u5408\u7406\u7684\u8CC7\u91D1\u914D\u5206", desc: "\u5168\u751F\u7523+10%/\u6BB5\uFF08\u6700\u592712\u6BB5\uFF09\u3002", cost: 2, max: 120, effectLevel: (lvl) => {
     } },
-    { id: "m_3", name: "\u6D1E\u5BDF\uFF1A\u77ED\u6642\u9593\u306E\u52DD\u5229", desc: "\u30AF\u30EA\u30C3\u30AF\u5F37\u5316+15%/\u6BB5\uFF08\u6700\u592710\u6BB5\uFF09\u3002", cost: 2, max: 10, effectLevel: (lvl) => {
+    { id: "m_3", name: "\u6D1E\u5BDF\uFF1A\u77ED\u6642\u9593\u306E\u52DD\u5229", desc: "\u30AF\u30EA\u30C3\u30AF\u5F37\u5316+15%/\u6BB5\uFF08\u6700\u592710\u6BB5\uFF09\u3002", cost: 2, max: 100, effectLevel: (lvl) => {
     } },
-    { id: "m_4", name: "\u6D1E\u5BDF\uFF1A\u67FB\u8AAD\u30B7\u30E7\u30FC\u30C8\u30AB\u30C3\u30C8", desc: "\u8AD6\u6587\u30B3\u30B9\u30C8\u4E0A\u6607\u3092\u7DE9\u548C(-2%/\u6BB5\u3001\u6700\u592712\u6BB5)\u3002", cost: 2, max: 12, effectLevel: (lvl) => {
+    { id: "m_4", name: "\u6D1E\u5BDF\uFF1A\u67FB\u8AAD\u30B7\u30E7\u30FC\u30C8\u30AB\u30C3\u30C8", desc: "\u8AD6\u6587\u30B3\u30B9\u30C8\u4E0A\u6607\u3092\u7DE9\u548C(-2%/\u6BB5\u3001\u6700\u592712\u6BB5)\u3002", cost: 2, max: 120, effectLevel: (lvl) => {
     } },
-    { id: "m_5", name: "\u6D1E\u5BDF\uFF1A\u6052\u4E45\u30EC\u30A2\u89B3\u6E2C", desc: "\u30EC\u30A2\u30A4\u30D9\u30F3\u30C8\u7387 +0.2%/\u6BB5\uFF08\u6700\u592710\u6BB5\uFF09\u3002", cost: 2, max: 10, effectLevel: (lvl) => {
+    { id: "m_5", name: "\u6D1E\u5BDF\uFF1A\u6052\u4E45\u30EC\u30A2\u89B3\u6E2C", desc: "\u30EC\u30A2\u30A4\u30D9\u30F3\u30C8\u7387 +0.2%/\u6BB5\uFF08\u6700\u592710\u6BB5\uFF09\u3002", cost: 2, max: 100, effectLevel: (lvl) => {
     } },
-    { id: "m_6", name: "\u6D1E\u5BDF\uFF1A\u30DF\u30CB\u30B2\u30FC\u30E0\u719F\u7DF4", desc: "\u30DF\u30CB\u30B2\u30FC\u30E0\u5831\u916C +8%/\u6BB5\uFF08\u6700\u592710\u6BB5\uFF09\u3002", cost: 2, max: 10, effectLevel: (lvl) => {
+    { id: "m_6", name: "\u6D1E\u5BDF\uFF1A\u30DF\u30CB\u30B2\u30FC\u30E0\u719F\u7DF4", desc: "\u30DF\u30CB\u30B2\u30FC\u30E0\u5831\u916C +8%/\u6BB5\uFF08\u6700\u592710\u6BB5\uFF09\u3002", cost: 2, max: 100, effectLevel: (lvl) => {
     } },
-    { id: "m_7", name: "\u6D1E\u5BDF\uFF1A\u5E8F\u76E4\u306E\u8AD6\u6587\u30D0\u30C3\u30D5\u30A1", desc: "\u8EE2\u751F\u76F4\u5F8C\u306B\u8AD6\u6587 +2/\u6BB5\uFF08\u6700\u59276\u6BB5\uFF09\u3002", cost: 2, max: 6, effectLevel: (lvl) => {
+    { id: "m_7", name: "\u6D1E\u5BDF\uFF1A\u5E8F\u76E4\u306E\u8AD6\u6587\u30D0\u30C3\u30D5\u30A1", desc: "\u8EE2\u751F\u76F4\u5F8C\u306B\u8AD6\u6587 +2/\u6BB5\uFF08\u6700\u59276\u6BB5\uFF09\u3002", cost: 2, max: 100, effectLevel: (lvl) => {
     } },
-    { id: "m_8", name: "\u6D1E\u5BDF\uFF1A\u88C5\u7F6E\u30B3\u30B9\u30C8\u5727\u7E2E", desc: "\u88C5\u7F6E\u30B3\u30B9\u30C8 -1%/\u6BB5\uFF08\u6700\u592715\u6BB5\uFF09\u3002", cost: 2, max: 15, effectLevel: (lvl) => {
+    { id: "m_8", name: "\u6D1E\u5BDF\uFF1A\u88C5\u7F6E\u30B3\u30B9\u30C8\u5727\u7E2E", desc: "\u88C5\u7F6E\u30B3\u30B9\u30C8 -1%/\u6BB5\uFF08\u6700\u592715\u6BB5\uFF09\u3002", cost: 2, max: 150, effectLevel: (lvl) => {
     } }
   ];
   const ACH = [
@@ -3275,6 +3276,18 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     }
     return false;
   }
+
+// ---- Balance knobs (v1.3)
+const BAL = {
+  genBaseMul: 1.12,   // generator base output
+  clickBase: 1.10,    // base click gain
+  paperBase: 55,      // base publish cost
+  paperExp: 1.18      // publish cost exponent vs total papers
+};
+function genBaseVal(g) {
+  return g.base * BAL.genBaseMul;
+}
+
   function metaAllBonus() {
     const lvl = S.metaLvl.m_2 || 0;
     return 1 + 0.1 * lvl;
@@ -3291,7 +3304,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     let base = 0;
     for (const g of GEN) {
       const qty = S.gens[g.id] || 0;
-      base += qty * g.base;
+      base += qty * genBaseVal(g);
     }
     const boost = activeBoostMult();
     const total = base * S.mult.all * metaAllBonus() * fameMultiplier() * trustMultiplier() * burnoutMultiplier() * opsAllBonus() * (S.flags.prestige ? insightMultiplier() : 1) * boost.m;
@@ -3299,7 +3312,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   }
   function clickGain() {
     const boost = activeBoostMult();
-    const base = 1;
+    const base = BAL.clickBase;
     const g = base * S.mult.click * metaClickBonus() * (1 + (S.gens.sensor || 0) * 2e-3 + (S.gens.meta_forge || 0) * 15e-4 + (S.gens.cp_ring || 0) * 12e-4) * fameMultiplier() * trustMultiplier() * burnoutMultiplier() * opsAllBonus() * (S.flags.prestige ? insightMultiplier() : 1) * boost.m;
     return g;
   }
@@ -3314,8 +3327,8 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   function paperCost() {
     const eff = S.mult.paperEff * (1 + Math.min(0.5, (S.gens.ftqc_fabric || 0) * 45e-4) + Math.min(0.25, (S.gens.rt_superconductor || 0) * 3e-3) + Math.min(0.4, (S.gens.planck_interferometer || 0) * 4e-3));
     const red = Math.max(0.55, metaPaperCostReduction());
-    const base = 60 * Math.pow(1 + S.totalPapers, 1.22);
-    return base / (eff * red);
+    const base = BAL.paperBase * Math.pow(1 + S.totalPapers, BAL.paperExp);
+    return base * opsPaperCostMult() / (eff * red);
   }
   function canPublish() {
     return !!S.owned.r_publishing;
@@ -3832,7 +3845,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
         <div class="title">${g.name} <span style="color:var(--muted);font-weight:700">\xD7${fmtInt(qty)}</span></div>
         <div class="desc">${g.desc}</div>
         <div class="meta">
-          <span class="chip">\u751F\u7523: <b>${fmt(g.base)}</b>/\u79D2 \xD7\u6570\u91CF</span>
+          <span class="chip">\u751F\u7523: <b>${fmt(genBaseVal(g))}</b>/\u79D2 \xD7\u6570\u91CF</span>
           <span class="chip">\u30B3\u30B9\u30C8: <b>${fmt(cost)}</b> \u30C7\u30FC\u30BF</span>
         </div>
         <div class="actions">
@@ -4095,6 +4108,157 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
       };
     });
   }
+
+// ---- Insight Shop (prestige currency)
+const INSIGHT_GOODS = [
+  { id: "ig_focus", name: "集中の結晶", desc: "10分間、全生産 x1.35。", cost: 5, kind: "boost", mult: 1.35, dur: 10 * 60 * 1e3 },
+  { id: "ig_peer", name: "査読者ネットワーク", desc: "10分間、レアイベント率 +1.5%。", cost: 6, kind: "boost", mult: 1.0, dur: 10 * 60 * 1e3, extra: { rareAdd: 0.015 } },
+  { id: "ig_grant", name: "寄付講座", desc: "資金 +600（即時）。", cost: 5, kind: "instant", apply: () => gainFunds(600) },
+  { id: "ig_sabbatical", name: "研究休暇", desc: "疲労 -18（即時）。", cost: 4, kind: "instant", apply: () => gainBurnout(-18) },
+  { id: "ig_statement", name: "透明性声明", desc: "誠実さ +8（即時）。", cost: 4, kind: "instant", apply: () => gainIntegrity(8) },
+  { id: "ig_trust", name: "協力者の紹介", desc: "信用 +10（即時）。", cost: 4, kind: "instant", apply: () => gainTrust(10) }
+];
+
+function buyInsightGood(id, e) {
+  if (!S.flags.prestige) return;
+  const item = INSIGHT_GOODS.find((x) => x.id === id);
+  if (!item) return;
+  const cost = item.cost || 0;
+  if ((S.insight || 0) < cost) {
+    SFX.bad();
+    FX.toast("洞察不足", `必要: ${fmtInt(cost)} / 所持: ${fmtInt(S.insight || 0)}`, "warn");
+    return;
+  }
+  // Clamp meaningful purchases (avoid wasting insight on capped stats)
+  if (item.id === "ig_sabbatical" && (S.burnout || 0) <= 0) {
+    FX.toast("購入不可", "疲労が0なので効果がありません", "info");
+    SFX.bad();
+    return;
+  }
+  if (item.id === "ig_trust" && (S.trust || 0) >= 100) {
+    FX.toast("購入不可", "信用が上限（100）です", "info");
+    SFX.bad();
+    return;
+  }
+  if (item.id === "ig_statement" && (S.integrity || 0) >= 100) {
+    FX.toast("購入不可", "誠実さが上限（100）です", "info");
+    SFX.bad();
+    return;
+  }
+
+  S.insight -= cost;
+
+  if (item.kind === "boost") {
+    const extra = item.extra || {};
+    const mult = item.mult || 1;
+    giveBoost(item.id, item.name, mult, item.dur || 5 * 60 * 1e3, extra);
+  } else {
+    try {
+      item.apply && item.apply();
+    } catch (err) {
+    }
+    FX.toast("洞察ショップ", `${item.name} を適用しました`, "good");
+    SFX.buy();
+  }
+  renderAll();
+  saveSoon();
+  if (e) fxPop("購入", "good", [{ txt: `-洞察 ${fmtInt(cost)}`, color: "var(--warn)" }], e);
+}
+
+function renderInsightShop() {
+  const body = $("#sectionBody");
+  if (!S.flags.prestige) {
+    body.innerHTML = `
+      <div class="card">
+        <div class="title">洞察ショップ</div>
+        <div class="desc">転生（再較正）解禁後に利用できます。研究ツリーを進めて「宇宙の再較正」を完了してください。</div>
+        <div class="hr"></div>
+        <div class="mini">ヒント：転生解禁後は、洞察が <b>次周回の倍率そのもの</b> になります。</div>
+      </div>
+    `;
+    return;
+  }
+
+  const metaItems = META.map((m) => {
+    const lvl = S.metaLvl[m.id] || 0;
+    const max = m.max || 1;
+    const cost = m.cost * (lvl === 0 ? 1 : 1 + lvl * 0.35);
+    const can = lvl < max && (S.insight || 0) >= cost;
+    const cls = "mitem " + (lvl >= max ? "owned" : can ? "" : "locked");
+    const tag = lvl >= max ? `<span class="tag">MAX</span>` : `<span class="tag">Lv ${lvl}/${max}</span><span class="tag">洞察 ${fmtInt(cost)}</span>`;
+    return `
+      <div class="${cls}">
+        <div style="font-weight:800">${m.name}</div>
+        <div class="desc">${m.desc}</div>
+        <div class="meta">${tag}</div>
+        <div class="actions">
+          <div class="btn ${can ? "" : "disabled"}" data-mid="${m.id}">購入</div>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  const goods = INSIGHT_GOODS.map((it) => {
+    const afford = (S.insight || 0) >= it.cost;
+    const cls = "mitem " + (afford ? "" : "locked");
+    return `
+      <div class="${cls}">
+        <div style="font-weight:800">${it.name}</div>
+        <div class="desc">${it.desc}</div>
+        <div class="meta"><span class="tag">洞察 ${fmtInt(it.cost)}</span></div>
+        <div class="actions">
+          <div class="btn ${afford ? "" : "disabled"}" data-ig="${it.id}">購入</div>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  body.innerHTML = `
+    <div class="card">
+      <div class="title">洞察ショップ</div>
+      <div class="desc">洞察を使って、永続のメタ強化と短期ブースト（消耗）を買えます。</div>
+      <div class="hr"></div>
+      <div class="meta">
+        <span class="chip">洞察: <b>${fmtInt(S.insight || 0)}</b></span>
+        <span class="chip">洞察倍率: <b>x${insightMultiplier().toFixed(2)}</b></span>
+        <span class="chip">転生見込み: <b>${fmtInt(prestigeGainEstimate())}</b></span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="title">メタアップグレード（永続）</div>
+      <div class="desc">転生を跨いで残る強化。洞察倍率にも間接的に効きます。</div>
+      <div class="hr"></div>
+      <div class="metaGrid" id="metaShopList">${metaItems}</div>
+    </div>
+
+    <div class="card">
+      <div class="title">洞察アイテム（消耗）</div>
+      <div class="desc">1周回の押し込み用。ブーストはスタックします。</div>
+      <div class="hr"></div>
+      <div class="metaGrid" id="insightGoodsList">${goods}</div>
+    </div>
+  `;
+
+  // Bind meta purchases
+  $("#metaShopList").querySelectorAll("[data-mid]").forEach((b) => {
+    b.onclick = (ev) => {
+      const id = b.getAttribute("data-mid");
+      if (tryBuyMeta(id, b)) {
+        renderAll();
+        saveSoon();
+      } else {
+        SFX.bad();
+      }
+    };
+  });
+
+  // Bind goods purchases
+  $("#insightGoodsList").querySelectorAll("[data-ig]").forEach((b) => {
+    b.onclick = (ev) => buyInsightGood(b.getAttribute("data-ig"), ev);
+  });
+}
+
   function renderStory() {
     const body = $("#sectionBody");
     const seen = STORY.filter((s) => S.storySeen[s.id]);
@@ -5142,6 +5306,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     $("#sectionTitle").textContent = ((_a = TABS.find((t) => t.id === tab)) == null ? void 0 : _a.name) || "\u2014";
     if (tab === "lab") renderLab();
     else if (tab === "research") renderResearch();
+    else if (tab === "insight") renderInsightShop();
     else if (tab === "story") renderStory();
     else if (tab === "ach") renderAchievements();
     else if (tab === "daily") renderDaily();
@@ -5221,7 +5386,9 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     if (r < rareChance()) {
       rare = true;
       S.stats.rare += 1;
-      const burst = (12 + Math.sqrt(S.totalPapers + 1) * 2.2) * (1 + Math.log10(1 + S.totalData) / 10);
+      let burst = (10 + Math.sqrt(S.totalPapers + 1) * 1.9) * (1 + Math.log10(1 + S.totalData) / 12);
+      // prevent rare events from dwarfing all other progress
+      burst = Math.min(burst, clickGain() * 70);
       gain += burst;
       const p = Math.random() < 0.32 ? 1 : 0;
       if (p) {
@@ -5385,6 +5552,10 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
     }
     if (k === "e") {
       S.tab = "ethics";
+      renderAll();
+    }
+    if (k === "i") {
+      S.tab = "insight";
       renderAll();
     }
   });
